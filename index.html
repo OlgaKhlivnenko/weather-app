@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;700&family=Roboto:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Weather app</title>
+    <meta charset="UTF-8" />
+    <!-- Только CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body>
+    <div class="content">
+      <form class="formSearch row" action="">
+        <input
+          type="text"
+          class="col-4 form-control searchCity"
+          placeholder="Type a city..."
+        />
+        <input
+          class="btn btn-primary col-2 btnSearch"
+          type="submit"
+          value="Search"
+        />
+      </form>
+      <h1 class="city">
+        Odesa
+      </h1>
+      <h2 class="data">Monday 12:00 pm</h2>
+      <!-- measuring -->
+      <div class="measuring">
+        <img src="#" alt="" />
+        <div class="temp-block">
+          <p class="temp">10</p>
+          <span class="unites">
+            <a class="unit-celsium" href="#">°C</a> |
+            <a class="unit-foring" href="#">F</a>
+          </span>
+        </div>
+        <ul>
+          <li>Precipitation:</li>
+          <li>Humidity:</li>
+          <li>Wind:</li>
+        </ul>
+      </div>
+      <!-- Buttons -->
+      <div class="btn-group btn" role="group" aria-label="Простой пример">
+        <button type="button" class="btn btn-primary">Temperature</button>
+        <button type="button" class="btn btn-primary">Precipitation</button>
+        <button type="button" class="btn btn-primary">Wind</button>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
