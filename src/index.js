@@ -7,7 +7,9 @@ let celsium = document.querySelector(".unit-celsium");
 let foring = document.querySelector(".unit-foring");
 let temp = document.querySelector(".temp");
 let btnCurrent = document.querySelector(".btn-current");
-let weatherDescrip = document.querySelector(".weather-description");
+let weatherDescripEl = document.querySelector(".weather-description");
+let humidityEl = document.querySelector(".humidity");
+let windEl = document.querySelector(".wind");
 
 function onSearch(e) {
   e.preventDefault();
@@ -28,14 +30,15 @@ let day = now.toDateString();
 let hour = now.toLocaleTimeString();
 data.innerHTML = `${day} ${hour}`;
 
-celsium.addEventListener("click", onChangeCelsium);
-foring.addEventListener("click", onChangeUnit);
-formSearch.addEventListener("submit", onSearch);
-
 function showCurCity(response){
+  console.log(response);
   city.innerHTML = response.data.name;
+  weatherDescripEl.innerHTML = response.data.weather[0].description;
+  console.log(weatherDescripEl);
   temp.innerHTML = Math.round(response.data.main.temp);
-  
+  humidityEl.innerHTML = response.data.main.humidity;
+  windEl.innerHTML = response.data.wind.speed;
+
 }
 
 function currentPosition(position){
@@ -49,4 +52,7 @@ axios.get(url).then(showCurCity);
 
 
 navigator.geolocation.getCurrentPosition(currentPosition);
-btnCurrent.addEventListener("click", showCurTemerature);
+celsium.addEventListener("click", onChangeCelsium);
+foring.addEventListener("click", onChangeUnit);
+formSearch.addEventListener("submit", onSearch);
+// btnCurrent.addEventListener("click", showCurTemerature);

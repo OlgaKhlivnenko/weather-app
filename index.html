@@ -17,44 +17,48 @@
 </head>
 
 <body>
-  <div class="content">
-    <form class="formSearch row" action="">
-      <input type="text" class="col-4 form-control searchCity" placeholder="Type a city..." />
-      <input class="btn btn-primary col-2 btn-search" type="submit" value="Search" />
-      <input class="btn btn-warning col-2 btn-current" type="submit" value="Current" />
-    </form>
-    <h1 class="city"></h1>
-    <p class="weather-description"></p>
-    <h2 class="data"></h2>
-    <!-- measuring -->
-    <div class="measuring">
-      <img src="#" alt="" />
-      <div class="temp-block">
-        <p class="temp"></p>
-        <span class="unites">
-          <a class="unit-celsium" href="#">°C</a> |
-          <a class="unit-foring" href="#">F</a>
-        </span>
-      </div>
-      <ul>
-        <li>Precipitation:</li>
-        <li>Humidity:</li>
-        <li>Wind:</li>
-      </ul>
-    </div>
-    <!-- Buttons -->
-    <div class="btn-group btn" role="group" aria-label="Простой пример">
-      <button type="button" class="btn btn-primary">Temperature</button>
-      <button type="button" class="btn btn-primary">Precipitation</button>
-      <button type="button" class="btn btn-primary">Wind</button>
-    </div>
-        <span><a href="https://github.com/OlgaKhlivnenko/weather-app">Open-source code</a> by Olha Khlivnenko</span>
-    </div>
-    <div>
+  <div class="wrapper-app">
+    <div class="wrapper">
+      <form class="formSearch row" action="">
+        <input type="text" class="col-4 form-control searchCity" placeholder="Type a city..." />
+        <input class="btn btn-primary col-2 btn-search" type="submit" value="Search" />
+        <input class="btn btn-warning col-2 btn-current" type="submit" value="Current" />
+      </form>
       
+        <div class="city-description">
+          <h1 class="city"></h1>
+          <ul>
+            <li class="data"></li>
+            <li class="weather-description"></li>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="col-6 temp-block">
+            <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" 
+            alt="cloudy"
+            width="100px" />
+            <p class="temp"></p>
+            <span class="unites">
+              <a class="unit-celsium" href="#">°C</a> |
+              <a class="unit-foring" href="#">F</a>
+            </span>
+          </div>
+        <!-- measuring -->
+          <div class="col-6 measuring">
+            <ul>
+              <li>Humidity:<span class="humidity"></span>%</li>
+              <li>Wind:<span class="wind"></span>km/h</li>
+            </ul>
+          </div>
+        </div>      
     </div>
+    <span>
+      <a href="https://github.com/OlgaKhlivnenko/weather-app">
+        Open-source code
+      </a>
+      by Olha Khlivnenko
+    </span>
   </div>
-
   <script src="src/index.js"></script>
 </body>
 
