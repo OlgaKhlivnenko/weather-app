@@ -71,6 +71,8 @@ main {
 .weather-description {
   margin-left: 40px;
   color: white;
+}
+.weather-description:first-letter{
   text-transform: capitalize;
 }
 .btn-current {
