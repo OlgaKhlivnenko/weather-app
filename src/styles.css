@@ -118,3 +118,13 @@ padding: 20px 0 0 10px;
 .active{
   color: white;
 }
+.forecast-date{
+  color: white;
+    font-size: 20px;
+    text-align: center;
+}
+.weather-forecast-temp{
+  color: white;
+  font-size: 14px;
+  text-align: center;
+}
