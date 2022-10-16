@@ -123,9 +123,15 @@ padding: 20px 0 0 10px;
     font-size: 20px;
     text-align: center;
 }
+.weather-forcast{
+  margin-top: 20px;
+  padding: 10px;
+  background-color: rgba(128, 128, 128, 0.408);
+  
+}
 .weather-forecast-temp{
   color: white;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
 }
 .forecast-temp-min{
@@ -133,4 +139,7 @@ padding: 20px 0 0 10px;
 }
 .forecast-temp-max{
   font-weight: 600;
+}
+.forecast-img{
+  margin: 0 auto;
 }

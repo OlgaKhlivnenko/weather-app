@@ -3,8 +3,8 @@ let formSearch = document.querySelector(".formSearch");
 let inputEl = document.querySelector(".searchCity");
 let city = document.querySelector(".city");
 let dataEl = document.querySelector(".data");
-let celsiumEl = document.querySelector(".unit-celsium");
-let foring = document.querySelector(".unit-foring");
+// let celsiumEl = document.querySelector(".unit-celsium");
+// let foring = document.querySelector(".unit-foring");
 let temp = document.querySelector(".temp");
 let btnCurrent = document.querySelector(".btn-current");
 let weatherDescripEl = document.querySelector(".weather-description");
@@ -23,18 +23,18 @@ function handelSubmit(e) {
   e.preventDefault();
   onSearch(inputEl.value);
 }
-function onChangeUnit(e) {
-  e.preventDefault();
-  celsiumEl.classList.remove("active");
-  foring.classList.add("active");
-  temp.innerHTML = Math.round((celsium * 9) / 5 + 32);
-}
-function onChangeCelsium(e) {
-  e.preventDefault();
-  celsiumEl.classList.add("active");
-  foring.classList.remove("active");
-  temp.innerHTML = Math.round(celsium);
-}
+// function onChangeUnit(e) {
+//   e.preventDefault();
+//   celsiumEl.classList.remove("active");
+//   foring.classList.add("active");
+//   temp.innerHTML = Math.round((celsium * 9) / 5 + 32);
+// }
+// function onChangeCelsium(e) {
+//   e.preventDefault();
+//   celsiumEl.classList.add("active");
+//   foring.classList.remove("active");
+//   temp.innerHTML = Math.round(celsium);
+// }
 function showTime(timestamp){
   let now = new Date();
   let days = ["Sunday",
@@ -88,8 +88,6 @@ let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat
   axios.get(url).then(displayForcast);
 }
   
-
-
 function displayForcast(response){
   let forecast = response.data.daily;
   console.log(forecast);
@@ -98,7 +96,7 @@ function displayForcast(response){
     if(index < 6){
       forecastHTML += `<div class="col-2">
           <p class="forecast-date">${formatDay(forecastDay.dt)}</p>
-          <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="">
+          <img class="forecast-img" src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" width="55px">
           <div class="weather-forecast-temp">
             <span class="forecast-temp-max">${Math.round(forecastDay.temp.max)}°</span>
             <span class="forecast-temp-min">${Math.round(forecastDay.temp.min)}°</span>
@@ -111,8 +109,8 @@ function displayForcast(response){
 
 
 // navigator.geolocation.getCurrentPosition(currentPosition);
-celsiumEl.addEventListener("click", onChangeCelsium);
-foring.addEventListener("click", onChangeUnit);
+// celsiumEl.addEventListener("click", onChangeCelsium);
+// foring.addEventListener("click", onChangeUnit);
 formSearch.addEventListener("submit", handelSubmit);
 // btnCurrent.addEventListener("click", showCurTemerature);
 onSearch("Odesa");
