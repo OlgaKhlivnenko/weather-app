@@ -128,3 +128,9 @@ padding: 20px 0 0 10px;
   font-size: 14px;
   text-align: center;
 }
+.forecast-temp-min{
+  margin-left: 5px;
+}
+.forecast-temp-max{
+  font-weight: 600;
+}
